@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Modules.Common.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74426e9539fa272c928d4661efe1b0ea40e13567")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d7d235149c5a6949436c6ca230dce95feb6ba82f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Modules.Common.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Modules.Common.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

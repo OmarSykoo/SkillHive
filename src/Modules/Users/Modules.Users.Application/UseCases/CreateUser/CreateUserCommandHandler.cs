@@ -15,14 +15,11 @@ namespace Modules.Users.Application.UseCases.CreateUser
             {
                 return new UserConflictEmail(request.Email);
             }
-            if (await userRepository.GetUserByUserName(request.UserName) is not null)
-            {
-                return new UserConflictUserName(request.UserName);
-            }
             PasswordHasher<object> passwordHasher = new PasswordHasher<object>();
             string HashedPassword = passwordHasher.HashPassword(new object(), request.Password);
             var user = User.Create(
-                request.UserName,
+                request.FirstName,
+                request.LastName,
                 HashedPassword,
                 request.Role,
                 request.Email,

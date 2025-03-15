@@ -14,7 +14,7 @@ namespace Modules.Common.Infrastructure
     {
         public static void AddInfrastructure(
             this IServiceCollection services,
-            Action<IRegistrationConfigurator>[] moduleConfigureConsumers, 
+            Action<IRegistrationConfigurator>[] moduleConfigureConsumers,
             string redisConnectionString)
         {
             #region redis cache Server setup
@@ -44,7 +44,7 @@ namespace Modules.Common.Infrastructure
             services.TryAddSingleton<IEventBus, EventBus>();
             services.AddMassTransit(config =>
             {
-                foreach ( var consumer in moduleConfigureConsumers )
+                foreach (var consumer in moduleConfigureConsumers)
                     consumer(config);
                 config.SetKebabCaseEndpointNameFormatter();
                 config.UsingInMemory((context, cfg) =>

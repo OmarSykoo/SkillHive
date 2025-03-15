@@ -14,7 +14,7 @@ public sealed class UpdateUserNameCommandHandler(IUserRepository userRepository,
         User? user = await userRepository.GetUserById(request.UserId);
         if (user is null)
             return new UserNotFound(request.UserId);
-        user.UpdateUserName(request.UserName);
+        user.UpdateName(request.FirstName, request.LastName);
         await userRepository.UpdateUser(user);
         await unitOfWork.SaveChangesAsync(cancellationToken);
         return request.UserId;

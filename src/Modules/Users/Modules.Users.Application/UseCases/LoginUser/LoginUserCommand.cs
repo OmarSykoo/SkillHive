@@ -1,5 +1,6 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using Modules.Common.Application.Messaging;
 using Modules.Common.Domain;
 using Modules.Common.Domain.Exceptions;

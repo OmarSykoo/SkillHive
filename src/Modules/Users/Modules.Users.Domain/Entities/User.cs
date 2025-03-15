@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Net.Http.Headers;
 using Modules.Common.Domain.Entities;
 using Modules.Common.Domain.Exceptions;
 
@@ -8,7 +9,8 @@ public class User : Entity
 {
     private User() { }
     public Guid id { get; private set; } = Guid.Empty;
-    public string UserName { get; private set; } = string.Empty;
+    public string FirstName { get; private set; } = string.Empty;
+    public string LastName { get; private set; } = string.Empty;
     public string HashedPassword { get; private set; } = string.Empty;
     public string Email { get; private set; } = string.Empty;
     public string PhoneNumber { get; private set; } = string.Empty;
@@ -16,14 +18,16 @@ public class User : Entity
     public DateOnly DateOfCreation { get; private set; } = new DateOnly();
     public Location location { get; private set; } = new Location();
     public Double Balance { get; private set; } = 0.0;
-    public static User Create(string UserName, string HashedPassword, string Role, string Email, string PhoneNumber, string state, string city, string locationDesc)
+    public static User Create(string FirstName, string LastName, string HashedPassword, string Role, string Email, string PhoneNumber, string state, string city, string locationDesc)
     {
 
         var user = new User()
         {
             id = Guid.NewGuid()
         ,
-            UserName = UserName
+            FirstName = FirstName
+        ,
+            LastName = LastName
         ,
             HashedPassword = HashedPassword
         ,
@@ -50,10 +54,16 @@ public class User : Entity
         this.HashedPassword = newHashedPassword;
     }
 
-    public void UpdateUserName(string newUserName)
+    public void UpdateName(string FirstName = null, string LastName = null)
     {
-        if (newUserName == this.UserName)
+        if (FirstName == this.FirstName && LastName == this.LastName)
+        {
             return;
-        this.UserName = newUserName;
+        }
+        if (FirstName is not null)
+            this.FirstName = FirstName;
+        if (LastName is not null)
+            this.LastName = LastName;
+        this.RaiseDomainEvent(new UserFirstLastNameUpdated(this.id));
     }
 }

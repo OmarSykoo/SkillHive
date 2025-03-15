@@ -21,7 +21,7 @@ public class JwtProvider : IJwtProvider
         var Claims = new Claim[] {
          new(CustomClaims.Sub,user.id.ToString()) ,
          new(CustomClaims.Email ,user.Email ),
-        //  new(CustomClaims.Role, user.Role )
+         new(CustomClaims.Role, user.Role )
      };
 
         var signingCredentials = new SigningCredentials(

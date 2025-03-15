@@ -169,7 +169,7 @@
           "Microsoft.Extensions.Primitives": "8.0.0"
         }
       },
-      "Microsoft.AspNetCore.Identity/2.3.0": {
+      "Microsoft.AspNetCore.Identity/2.3.1": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Cookies": "2.3.0",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "2.3.0",
@@ -376,7 +376,6 @@
           "FluentValidation.DependencyInjectionExtensions": "11.11.0",
           "MassTransit": "8.3.6",
           "MediatR": "12.4.1",
-          "Microsoft.AspNetCore.Identity": "2.3.0",
           "Modules.Common.Domain": "1.0.0",
           "Serilog": "4.2.0"
         },
@@ -390,7 +389,7 @@
       "Modules.Common.Domain/1.0.0": {
         "dependencies": {
           "MediatR.Contracts": "2.0.1",
-          "Microsoft.AspNetCore.Identity": "2.3.0"
+          "Microsoft.AspNetCore.Identity": "2.3.1"
         },
         "runtime": {
           "Modules.Common.Domain.dll": {
@@ -547,12 +546,12 @@
       "path": "microsoft.aspnetcore.http.features/2.3.0",
       "hashPath": "microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Identity/2.3.0": {
+    "Microsoft.AspNetCore.Identity/2.3.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AdMUyBRf9dlhvGBQJgxA4UbveDndevehYHL1cHvRQ2pPJGvE9vIeKJov24aQLh3E8uuCmHcMojBfE6pvVidzyw==",
-      "path": "microsoft.aspnetcore.identity/2.3.0",
-      "hashPath": "microsoft.aspnetcore.identity.2.3.0.nupkg.sha512"
+      "sha512": "sha512-JcQ4pNXg+IISfcR95jeO2ZRt38N67MrUEj28HBmwfqD96BUyw4S54tQhrBmCOyPlf2vgNvSz/tsGAG7EgC0yRg==",
+      "path": "microsoft.aspnetcore.identity/2.3.1",
+      "hashPath": "microsoft.aspnetcore.identity.2.3.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.WebUtilities/2.3.0": {
       "type": "package",

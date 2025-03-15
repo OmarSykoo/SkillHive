@@ -40,6 +40,9 @@
               },
               "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Application\\Modules.Users.Application.csproj": {
                 "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Application\\Modules.Users.Application.csproj"
+              },
+              "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Infrastructure\\Modules.Users.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Infrastructure\\Modules.Users.Infrastructure.csproj"
               }
             }
           }
@@ -62,6 +65,12 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -149,10 +158,6 @@
               "target": "Package",
               "version": "[12.4.1, )"
             },
-            "Microsoft.AspNetCore.Identity": {
-              "target": "Package",
-              "version": "[2.3.0, )"
-            },
             "Serilog": {
               "target": "Package",
               "version": "[4.2.0, )"
@@ -229,7 +234,7 @@
             },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
-              "version": "[2.3.0, )"
+              "version": "[2.3.1, )"
             }
           },
           "imports": [
@@ -312,7 +317,7 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.1, )"
+              "version": "[9.0.3, )"
             },
             "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
@@ -502,6 +507,151 @@
             "projectReferences": {
               "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Domain\\Modules.Common.Domain.csproj": {
                 "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Domain\\Modules.Common.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Infrastructure\\Modules.Users.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Infrastructure\\Modules.Users.Infrastructure.csproj",
+        "projectName": "Modules.Users.Infrastructure",
+        "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Infrastructure\\Modules.Users.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\omaro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\omaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Infrastructure\\Modules.Common.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Infrastructure\\Modules.Common.Infrastructure.csproj"
+              },
+              "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Application\\Modules.Users.Application.csproj": {
+                "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Application\\Modules.Users.Application.csproj"
+              },
+              "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Presentation\\Modules.Users.Presentation.csproj": {
+                "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Presentation\\Modules.Users.Presentation.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Presentation\\Modules.Users.Presentation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Presentation\\Modules.Users.Presentation.csproj",
+        "projectName": "Modules.Users.Presentation",
+        "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Presentation\\Modules.Users.Presentation.csproj",
+        "packagesPath": "C:\\Users\\omaro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Presentation\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\omaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Infrastructure\\Modules.Common.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Infrastructure\\Modules.Common.Infrastructure.csproj"
+              },
+              "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Presentation\\Modules.Common.Presentation.csproj": {
+                "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Presentation\\Modules.Common.Presentation.csproj"
               }
             }
           }

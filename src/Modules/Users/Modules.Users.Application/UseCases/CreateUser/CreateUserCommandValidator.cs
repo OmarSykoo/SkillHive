@@ -9,12 +9,14 @@ namespace Modules.Users.Application.UseCases.CreateUser
     {
         public CreateUserCommandValidator()
         {
-            RuleFor(x => x.UserName)
-               .NotEmpty().WithMessage("Username is required.")
-               .MinimumLength(3).WithMessage("Username must be at least 3 characters long.")
-               .MaximumLength(20).WithMessage("Username must not exceed 20 characters.")
-               .Matches(@"^[a-zA-Z]").WithMessage("Username must start with a letter.")
-               .Matches(@"^[a-zA-Z0-9._]+$").WithMessage("Username can only contain letters, numbers, dots, and underscores.");
+            RuleFor(x => x.FirstName)
+               .NotEmpty().WithMessage("First name is required.")
+               .MinimumLength(2).WithMessage("First name must be at least 3 characters long.")
+               .MaximumLength(20).WithMessage("First name must not exceed 20 characters.");
+            RuleFor(x => x.LastName)
+               .NotEmpty().WithMessage("Last name is required.")
+               .MinimumLength(2).WithMessage("Last name must be at least 3 characters long.")
+               .MaximumLength(20).WithMessage("Last name must not exceed 20 characters.");
             RuleFor(x => x.Email).NotEmpty().EmailAddress();
             RuleFor(x => x.Role).NotEmpty().Must(role => UserRole.IsValidRole(role)).WithMessage("Invalid role");
             RuleFor(x => x.city).NotEmpty();
