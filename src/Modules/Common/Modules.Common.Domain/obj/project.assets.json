@@ -262,7 +262,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Identity/2.3.0": {
+      "Microsoft.AspNetCore.Identity/2.3.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Cookies": "2.3.0",
@@ -918,16 +918,16 @@
         "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Identity/2.3.0": {
-      "sha512": "AdMUyBRf9dlhvGBQJgxA4UbveDndevehYHL1cHvRQ2pPJGvE9vIeKJov24aQLh3E8uuCmHcMojBfE6pvVidzyw==",
+    "Microsoft.AspNetCore.Identity/2.3.1": {
+      "sha512": "JcQ4pNXg+IISfcR95jeO2ZRt38N67MrUEj28HBmwfqD96BUyw4S54tQhrBmCOyPlf2vgNvSz/tsGAG7EgC0yRg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.identity/2.3.0",
+      "path": "microsoft.aspnetcore.identity/2.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Identity.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Identity.xml",
-        "microsoft.aspnetcore.identity.2.3.0.nupkg.sha512",
+        "microsoft.aspnetcore.identity.2.3.1.nupkg.sha512",
         "microsoft.aspnetcore.identity.nuspec"
       ]
     },
@@ -1742,7 +1742,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "MediatR.Contracts >= 2.0.1",
-      "Microsoft.AspNetCore.Identity >= 2.3.0"
+      "Microsoft.AspNetCore.Identity >= 2.3.1"
     ]
   },
   "packageFolders": {
@@ -1751,11 +1751,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Domain\\Modules.Common.Domain.csproj",
+      "projectUniqueName": "c:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Domain\\Modules.Common.Domain.csproj",
       "projectName": "Modules.Common.Domain",
-      "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Domain\\Modules.Common.Domain.csproj",
+      "projectPath": "c:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Domain\\Modules.Common.Domain.csproj",
       "packagesPath": "C:\\Users\\omaro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Domain\\obj\\",
+      "outputPath": "c:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\omaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1796,7 +1796,7 @@
           },
           "Microsoft.AspNetCore.Identity": {
             "target": "Package",
-            "version": "[2.3.0, )"
+            "version": "[2.3.1, )"
           }
         },
         "imports": [
@@ -1818,17 +1818,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNetCore.Identity' 2.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-2865-hh9g-w894",
-      "libraryId": "Microsoft.AspNetCore.Identity",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

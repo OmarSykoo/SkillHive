@@ -9,9 +9,10 @@ namespace Modules.Common.Domain
     public class Result
     {
         public bool isSuccess { get; init; }
-        public Exception? exception { get; init; } 
-        protected Result( Exception exception ) {
-            this.isSuccess = false; 
+        public Exception? exception { get; init; }
+        protected Result(Exception exception)
+        {
+            this.isSuccess = false;
             this.exception = exception;
         }
         protected Result()
@@ -19,7 +20,7 @@ namespace Modules.Common.Domain
             this.isSuccess = true;
             this.exception = null;
         }
-        public static Result Failure( Exception exception )
+        public static Result Failure(Exception exception)
         {
             return new Result(exception);
         }
@@ -38,21 +39,23 @@ namespace Modules.Common.Domain
 
     public class Result<T> : Result
     {
-        private T _value;
-        public T Value {
-            get {
-                if (isSuccess) 
-                    return _value;
+        public T? _value;
+        public T Value
+        {
+            get
+            {
+                if (isSuccess)
+                    return _value!;
                 throw new InvalidOperationException("You can get value from failure result");
-            } 
+            }
             private set
             {
                 _value = value;
             }
         }
         private Result(T Value) : base() { this.Value = Value; }
-        private Result( Exception exception ) : base( exception ) { }
-        public TT Match<TT>( Func<T , TT> Succ , Func<Exception , TT> Fail )
+        private Result(Exception exception) : base(exception) { }
+        public TT Match<TT>(Func<T, TT> Succ, Func<Exception, TT> Fail)
         {
             if (isSuccess)
                 return Succ.Invoke(Value);
