@@ -11,6 +11,7 @@ using Modules.Users.Domain.Repositories;
 using Modules.Users.Infrastructure.Authentication;
 using Modules.Users.Infrastructure.Data;
 using Modules.Users.Infrastructure.Repositories;
+using Modules.Users.Infrastructure.Services;
 using Qdrant.Client;
 
 namespace Modules.Users.Infrastructure;
@@ -27,6 +28,7 @@ public static class UsersModule
     {
         string DbConnectionString = configuration.GetConnectionString("UsersDb")!;
         string QuadrantGrpc = configuration.GetConnectionString("QuadrantGrpc")!;
+        string FaceNetApi = configuration.GetConnectionString("FaceNetApi")!;
         services.AddDbContext<UserDbContext>((sp, options) =>
         {
             options.UseSqlServer(
@@ -51,5 +53,6 @@ public static class UsersModule
         services.AddScoped<IDbConnectionFactory>(sp => new DbConnectionFactory(DbConnectionString));
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<UserDbContext>());
         services.AddScoped<IFaceEmbedingRepository, FaceEmbedingRepository>();
+        services.AddScoped<IFaceModelService>(sp => new FaceModelService(FaceNetApi));
     }
 }
