@@ -504,6 +504,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[9.0.3, )"
+            },
+            "Qdrant.Client": {
+              "target": "Package",
+              "version": "[1.13.0, )"
             }
           },
           "imports": [
@@ -556,6 +560,9 @@
               },
               "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Presentation\\Modules.Common.Presentation.csproj": {
                 "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Presentation\\Modules.Common.Presentation.csproj"
+              },
+              "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Application\\Modules.Users.Application.csproj": {
+                "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Application\\Modules.Users.Application.csproj"
               }
             }
           }

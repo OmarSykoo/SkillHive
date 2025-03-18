@@ -1,4 +1,5 @@
 using System.Windows.Input;
+using FluentValidation;
 using Modules.Common.Application.Messaging;
 using Modules.Common.Domain;
 using Modules.Users.Application.Abstractions;
@@ -41,3 +42,10 @@ public sealed class LoginWithRefreshHandler(
     }
 }
 
+internal sealed class LoginWithRefreshCommandValidator : AbstractValidator<LoginWithRefreshCommand>
+{
+    public LoginWithRefreshCommandValidator()
+    {
+        RuleFor(x => x.Token).NotEmpty();
+    }
+}

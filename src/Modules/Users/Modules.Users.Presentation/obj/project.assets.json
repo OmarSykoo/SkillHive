@@ -1225,6 +1225,33 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Modules.Users.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Modules.Common.Application": "1.0.0",
+          "Modules.Users.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Modules.Users.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modules.Users.Application.dll": {}
+        }
+      },
+      "Modules.Users.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Modules.Common.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Modules.Users.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modules.Users.Domain.dll": {}
+        }
       }
     }
   },
@@ -2837,12 +2864,23 @@
       "type": "project",
       "path": "../../Common/Modules.Common.Presentation/Modules.Common.Presentation.csproj",
       "msbuildProject": "../../Common/Modules.Common.Presentation/Modules.Common.Presentation.csproj"
+    },
+    "Modules.Users.Application/1.0.0": {
+      "type": "project",
+      "path": "../Modules.Users.Application/Modules.Users.Application.csproj",
+      "msbuildProject": "../Modules.Users.Application/Modules.Users.Application.csproj"
+    },
+    "Modules.Users.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Modules.Users.Domain/Modules.Users.Domain.csproj",
+      "msbuildProject": "../Modules.Users.Domain/Modules.Users.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Modules.Common.Infrastructure >= 1.0.0",
-      "Modules.Common.Presentation >= 1.0.0"
+      "Modules.Common.Presentation >= 1.0.0",
+      "Modules.Users.Application >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2878,6 +2916,9 @@
             },
             "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Presentation\\Modules.Common.Presentation.csproj": {
               "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Common\\Modules.Common.Presentation\\Modules.Common.Presentation.csproj"
+            },
+            "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Application\\Modules.Users.Application.csproj": {
+              "projectPath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Application\\Modules.Users.Application.csproj"
             }
           }
         }
