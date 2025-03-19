@@ -1,0 +1,16 @@
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\bin\Debug\net8.0\Modules.Courses.Domain.deps.json
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\bin\Debug\net8.0\Modules.Courses.Domain.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\bin\Debug\net8.0\Modules.Courses.Domain.pdb
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\bin\Debug\net8.0\Modules.Common.Domain.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\bin\Debug\net8.0\Modules.Common.Domain.pdb
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\obj\Debug\net8.0\Modules.Courses.Domain.csproj.AssemblyReference.cache
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\obj\Debug\net8.0\Modules.Courses.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\obj\Debug\net8.0\Modules.Courses.Domain.AssemblyInfoInputs.cache
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\obj\Debug\net8.0\Modules.Courses.Domain.AssemblyInfo.cs
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\obj\Debug\net8.0\Modules.Courses.Domain.csproj.CoreCompileInputs.cache
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\obj\Debug\net8.0\Modules.Courses.Domain.sourcelink.json
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\obj\Debug\net8.0\Modules..DAC1B26A.Up2Date
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\obj\Debug\net8.0\Modules.Courses.Domain.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\obj\Debug\net8.0\refint\Modules.Courses.Domain.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\obj\Debug\net8.0\Modules.Courses.Domain.pdb
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.Domain\obj\Debug\net8.0\ref\Modules.Courses.Domain.dll

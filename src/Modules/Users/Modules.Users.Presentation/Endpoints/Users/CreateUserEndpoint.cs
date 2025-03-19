@@ -10,7 +10,7 @@ using Modules.Users.Domain.Entities;
 
 namespace Modules.Users.Presentation.Endpoints.Users;
 
-public class CreateUser : IEndpoint
+public class CreateUserEndpoint : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
@@ -20,7 +20,7 @@ public class CreateUser : IEndpoint
             if (userId.isSuccess)
                 return Results.Ok(userId.Value);
             return userId.ExceptionToResult();
-        }).WithName("Users");
+        })
+        .AllowAnonymous();
     }
-
 }

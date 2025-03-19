@@ -41,11 +41,7 @@ public static class UsersModule
         });
         services.AddScoped<QdrantClient>(sp =>
         {
-            if (Uri.TryCreate(QuadrantGrpc, UriKind.Absolute, out var result))
-            {
-                return new QdrantClient(result.Host, result.Port);
-            }
-            throw new SkillHiveException("Couldn't parse the url of the QdrantClient Grpc connection string in the Users module");
+            return new QdrantClient("localhost", 6334);
         });
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IRefreshRepository, RefreshTokenRepository>();

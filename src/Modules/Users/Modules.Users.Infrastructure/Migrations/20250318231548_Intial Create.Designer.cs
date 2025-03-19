@@ -12,7 +12,7 @@ using Modules.Users.Infrastructure;
 namespace Modules.Users.Infrastructure.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20250315171412_Intial Create")]
+    [Migration("20250318231548_Intial Create")]
     partial class IntialCreate
     {
         /// <inheritdoc />
@@ -60,8 +60,8 @@ namespace Modules.Users.Infrastructure.Migrations
                     b.Property<double>("Balance")
                         .HasColumnType("float");
 
-                    b.Property<DateOnly>("DateOfCreation")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("DateOfCreation")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .IsRequired()

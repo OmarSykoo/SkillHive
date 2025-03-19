@@ -22,7 +22,7 @@ namespace Modules.Users.Infrastructure.Migrations
                     Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateOfCreation = table.Column<DateOnly>(type: "date", nullable: false),
+                    DateOfCreation = table.Column<DateTime>(type: "datetime2", nullable: false),
                     location_state = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     location_city = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     location_description = table.Column<string>(type: "nvarchar(max)", nullable: false),

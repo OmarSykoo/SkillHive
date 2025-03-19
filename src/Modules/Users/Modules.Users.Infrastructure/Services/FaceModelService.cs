@@ -13,6 +13,7 @@ public class FaceModelService(string url) : IFaceModelService
         using ByteArrayContent content = new ByteArrayContent(imgBytes);
         HttpResponseMessage response = await client.PostAsync(url + "/upload", content);
         string json = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(json);
         return JsonSerializer.Deserialize<ICollection<float>>(json)!;
     }
 

@@ -9,7 +9,8 @@
       "Modules.Users.Presentation/1.0.0": {
         "dependencies": {
           "Modules.Common.Infrastructure": "1.0.0",
-          "Modules.Common.Presentation": "1.0.0"
+          "Modules.Common.Presentation": "1.0.0",
+          "Modules.Users.Application": "1.0.0"
         },
         "runtime": {
           "Modules.Users.Presentation.dll": {}
@@ -117,14 +118,14 @@
           "Microsoft.AspNetCore.Http.Extensions": "2.3.0"
         }
       },
-      "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.13": {
+      "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.14": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "7.1.2"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
-            "assemblyVersion": "8.0.13.0",
-            "fileVersion": "8.0.1325.6610"
+            "assemblyVersion": "8.0.14.0",
+            "fileVersion": "8.0.1425.11221"
           }
         }
       },
@@ -602,7 +603,7 @@
         "dependencies": {
           "Dapper": "2.1.28",
           "MassTransit": "8.3.6",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.13",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.14",
           "Microsoft.EntityFrameworkCore": "9.0.3",
           "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.1",
           "Modules.Common.Application": "1.0.0"
@@ -620,6 +621,29 @@
         },
         "runtime": {
           "Modules.Common.Presentation.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Modules.Users.Application/1.0.0": {
+        "dependencies": {
+          "Modules.Common.Application": "1.0.0",
+          "Modules.Users.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Modules.Users.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Modules.Users.Domain/1.0.0": {
+        "dependencies": {
+          "Modules.Common.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Modules.Users.Domain.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -710,12 +734,12 @@
       "path": "microsoft.aspnetcore.authentication.core/2.3.0",
       "hashPath": "microsoft.aspnetcore.authentication.core.2.3.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.13": {
+    "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.14": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-EUNaX3F4fALAfvp7wsCqjqziu1lTNwYRFbIcVJEt6vInWxEpscAM/pcG6GBOx3WcmSRdB7sqtKAKSkyY6XhTig==",
-      "path": "microsoft.aspnetcore.authentication.jwtbearer/8.0.13",
-      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.8.0.13.nupkg.sha512"
+      "sha512": "sha512-e19jmWJAQucbPYk3/fihJMDCYfv6CO+Qwp34pOehUSCbaHROw6FZ551SN1D0s9Btl0U/QHfuwFq6Z8Oa2ktE6g==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/8.0.14",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.8.0.14.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/2.3.0": {
       "type": "package",
@@ -1118,6 +1142,16 @@
       "sha512": ""
     },
     "Modules.Common.Presentation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Modules.Users.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Modules.Users.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

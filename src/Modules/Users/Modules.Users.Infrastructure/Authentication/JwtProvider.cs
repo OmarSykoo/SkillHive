@@ -18,26 +18,25 @@ public class JwtProvider : IJwtProvider
     }
     public string GenerateAccesss(User user)
     {
-        var Claims = new Claim[] {
-         new(CustomClaims.Sub,user.id.ToString()) ,
-         new(CustomClaims.Email ,user.Email ),
-         new(CustomClaims.Role, user.Role )
-     };
+        var claims = new List<Claim>
+    {
+        new(CustomClaims.Sub, user.id.ToString()),
+        new(CustomClaims.Email, user.Email),
+        new(CustomClaims.Role, user.Role)
+    };
 
-        var signingCredentials = new SigningCredentials(
-            new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SecretKey)),
-            SecurityAlgorithms.HmacSha256);
+        var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SecretKey));
+        var signingCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
 
         var token = new JwtSecurityToken(
-            _jwtOptions.Issuer,
-            _jwtOptions.Audience,
-            Claims,
-            null,
-            DateTime.UtcNow.AddMinutes(_jwtOptions.LifeTimeInMinutes));
+            issuer: _jwtOptions.Issuer,
+            audience: _jwtOptions.Audience,
+            claims: claims,
+            expires: DateTime.UtcNow.AddMinutes(_jwtOptions.LifeTimeInMinutes),
+            signingCredentials: signingCredentials
+        );
 
-        string tokenValue = new JwtSecurityTokenHandler().WriteToken(token);
-
-        return tokenValue;
+        return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
     public string GenerateReferesh()

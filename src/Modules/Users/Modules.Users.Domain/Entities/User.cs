@@ -15,7 +15,7 @@ public class User : Entity
     public string Email { get; private set; } = string.Empty;
     public string PhoneNumber { get; private set; } = string.Empty;
     public string Role { get; private set; } = string.Empty;
-    public DateOnly DateOfCreation { get; private set; } = new DateOnly();
+    public DateTime DateOfCreation { get; private set; }
     public Location location { get; private set; } = new Location();
     public Double Balance { get; private set; } = 0.0;
     public static User Create(string FirstName, string LastName, string HashedPassword, string Role, string Email, string PhoneNumber, string state, string city, string locationDesc)
@@ -37,7 +37,7 @@ public class User : Entity
         ,
             Balance = 0.0
         ,
-            DateOfCreation = DateOnly.FromDateTime(DateTime.UtcNow)
+            DateOfCreation = DateTime.Now
         ,
             location = new Location(state, city, locationDesc)
         ,
@@ -54,7 +54,7 @@ public class User : Entity
         this.HashedPassword = newHashedPassword;
     }
 
-    public void UpdateName(string FirstName = null, string LastName = null)
+    public void UpdateName(string FirstName, string LastName)
     {
         if (FirstName == this.FirstName && LastName == this.LastName)
         {

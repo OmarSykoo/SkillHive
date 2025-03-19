@@ -12,6 +12,7 @@ public class FaceEmbedingRepository(QdrantClient qdrantClient) : IFaceEmbedingRe
         var operationInfo = await qdrantClient.UpsertAsync(collectionName: "user_embedings", points: new List<PointStruct>
         {
             new PointStruct (){
+                Id = Guid.NewGuid(),
                 Vectors = faceEmbeding.Embeding.ToArray(),
                 Payload = {
                     ["user_id"] = faceEmbeding.UserId.ToString()

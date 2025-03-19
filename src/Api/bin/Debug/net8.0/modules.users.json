@@ -1,5 +1,7 @@
 {
     "ConnectionStrings": {
-        "UsersDb": "Server=.\\SQLEXPRESS;Database=SkillHiveUsersDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;"
+        "UsersDb": "Server=.\\SQLEXPRESS;Database=SkillHiveUsersDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;",
+        "QuadrantGrpc": "https://localhost:6333",
+        "FaceNetApi": "http://127.0.0.1:5000"
     }
 }

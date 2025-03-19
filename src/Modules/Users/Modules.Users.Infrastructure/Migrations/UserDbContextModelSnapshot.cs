@@ -57,8 +57,8 @@ namespace Modules.Users.Infrastructure.Migrations
                     b.Property<double>("Balance")
                         .HasColumnType("float");
 
-                    b.Property<DateOnly>("DateOfCreation")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("DateOfCreation")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .IsRequired()

@@ -7,15 +7,17 @@ using Modules.Common.Infrastructure.interceptors;
 using Modules.Common.Infrastructure.Authentication;
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-
+using Microsoft.Extensions.Configuration;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
 namespace Modules.Common.Infrastructure
 {
     public static class InfrastructureConfiguration
     {
         public static void AddInfrastructure(
             this IServiceCollection services,
-            Action<IRegistrationConfigurator>[] moduleConfigureConsumers,
-            string redisConnectionString)
+            Action<IRegistrationConfigurator>[] moduleConfigureConsumers
+            , IConfiguration config)
         {
             #region redis cache Server setup
             //IConnectionMultiplexer connectionMultiplexer = ConnectionMultiplexer.Connect( redisConnectionString );
@@ -31,9 +33,22 @@ namespace Modules.Common.Infrastructure
             #endregion
 
             #region Jwt Configure
-            services.ConfigureOptions<JwtBearerOptionsSetup>();
             services.ConfigureOptions<JwtOptionsSetup>();
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new()
+                {
+                    ValidateAudience = true,
+                    ValidateIssuer = true,
+                    ValidIssuer = config["Jwt:Issuer"],
+                    ValidAudience = config["Jwt:Audience"],
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                    Encoding.UTF8.GetBytes(config["Jwt:SecretKey"]!)
+                    )
+                };
+            });
             services.AddAuthorization();
             #endregion 
 
