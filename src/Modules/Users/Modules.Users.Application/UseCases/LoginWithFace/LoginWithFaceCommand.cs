@@ -25,10 +25,16 @@ public class LoginWithFaceCommandHandler(
     {
         ICollection<float> embeding = await faceModelService.FaceImgToEmbeding(request.imgBinaries);
         (float? score, Guid? user_id) = await faceEmbedingRepository.GetMatching(embeding);
+        System.Console.WriteLine("------------------------");
+        System.Console.WriteLine(score);
+        System.Console.WriteLine(user_id);
+        System.Console.WriteLine("------------------------");
         if (score == null && user_id == null)
             return new FaceNotFound();
         if (score < faceModelService.acceptanceValue)
+        {
             return new FaceNotFound();
+        }
         if (score == null || user_id == null)
             throw new SkillHiveException("face embed doesn't have a user id registerd");
         User? user = await userRepository.GetUserById(user_id ?? Guid.Empty);
