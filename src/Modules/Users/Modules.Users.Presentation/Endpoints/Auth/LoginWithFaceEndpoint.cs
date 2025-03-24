@@ -13,7 +13,7 @@ public class LoginWithFaceEndpoint : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPost("auth/face", async ([FromBody] IFormFile file, [FromServices] ISender sender) =>
+        app.MapPost("api/auth/face", async ([FromForm] IFormFile file, [FromServices] ISender sender) =>
         {
             byte[] fileBytes;
             using (var memoryStream = new MemoryStream())
@@ -24,7 +24,8 @@ public class LoginWithFaceEndpoint : IEndpoint
             var result = await sender.Send(new LoginWithFaceCommand(fileBytes));
             return result.isSuccess ? Results.Ok(result.Value) : result.ExceptionToResult();
         })
-        .AllowAnonymous();
+        .AllowAnonymous()
+        .DisableAntiforgery();
     }
 
 }

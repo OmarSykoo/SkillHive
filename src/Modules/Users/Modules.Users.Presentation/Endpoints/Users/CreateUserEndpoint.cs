@@ -14,7 +14,7 @@ public class CreateUserEndpoint : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPost("users", async (CreateUserCommand request, ISender sender) =>
+        app.MapPost("api/users", async (CreateUserCommand request, ISender sender) =>
         {
             var userId = await sender.Send(request);
             if (userId.isSuccess)

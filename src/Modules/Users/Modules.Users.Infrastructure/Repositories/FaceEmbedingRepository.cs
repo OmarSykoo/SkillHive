@@ -2,6 +2,7 @@ using Modules.Users.Domain.Entities;
 using Modules.Users.Domain.Repositories;
 using Qdrant.Client;
 using Qdrant.Client.Grpc;
+using static Qdrant.Client.Grpc.Conditions;
 
 namespace Modules.Users.Infrastructure.Repositories;
 
@@ -23,13 +24,17 @@ public class FaceEmbedingRepository(QdrantClient qdrantClient) : IFaceEmbedingRe
 
     public async Task<(float? score, Guid? userId)> GetMatching(ICollection<float> embeding)
     {
-        IReadOnlyList<ScoredPoint> searchResults = await qdrantClient.QueryAsync(
+        IReadOnlyList<ScoredPoint> searchResults = await qdrantClient.SearchAsync(
             collectionName: "user_embedings",
-            query: embeding.ToArray(),
-            limit: 1);
+            vector: embeding.ToArray(),
+            limit: 1,
+            payloadSelector: true
+        );
         ScoredPoint? searchResult = searchResults.FirstOrDefault();
         if (searchResult == null)
             return (null, null);
-        return (searchResult.Score, new Guid(searchResult.Payload.GetValueOrDefault("user_id")!.StringValue));
+        float? score = searchResult.Score;
+        Guid? guid = Guid.Parse(searchResult.Payload.GetValueOrDefault("user_id")!.StringValue);
+        return (score, guid);
     }
 }

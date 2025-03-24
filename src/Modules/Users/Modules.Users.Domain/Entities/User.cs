@@ -18,6 +18,7 @@ public class User : Entity
     public DateTime DateOfCreation { get; private set; }
     public Location location { get; private set; } = new Location();
     public Double Balance { get; private set; } = 0.0;
+    public bool Verified { get; private set; } = false;
     public static User Create(string FirstName, string LastName, string HashedPassword, string Role, string Email, string PhoneNumber, string state, string city, string locationDesc)
     {
 
@@ -42,6 +43,8 @@ public class User : Entity
             location = new Location(state, city, locationDesc)
         ,
             Role = Role
+        ,
+            Verified = false
         };
         user.RaiseDomainEvent(new UserCreatedDomainEvent(user.id));
         return user;
@@ -65,5 +68,13 @@ public class User : Entity
         if (LastName is not null)
             this.LastName = LastName;
         this.RaiseDomainEvent(new UserFirstLastNameUpdated(this.id));
+    }
+
+    public void Verify()
+    {
+        if (Verified == true)
+            return;
+        this.Verified = true;
+        this.RaiseDomainEvent(new UserVerifiedDomainEvent(this.id));
     }
 }

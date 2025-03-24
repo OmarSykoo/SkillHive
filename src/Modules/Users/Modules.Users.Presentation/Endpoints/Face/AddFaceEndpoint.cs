@@ -18,7 +18,7 @@ public class AddFaceEndpoint : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPost("face", async (HttpContext httpContext, [FromForm] IFormFile file, [FromServices] ISender sender) =>
+        app.MapPost("api/face", async (HttpContext httpContext, [FromForm] IFormFile file, [FromServices] ISender sender) =>
         {
             Guid user_id = httpContext.User.GetUserId();
             byte[] fileBytes;

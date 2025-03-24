@@ -18,12 +18,12 @@ public class JwtProvider : IJwtProvider
     }
     public string GenerateAccesss(User user)
     {
-        var claims = new List<Claim>
-    {
-        new(CustomClaims.Sub, user.id.ToString()),
-        new(CustomClaims.Email, user.Email),
-        new(CustomClaims.Role, user.Role)
-    };
+        var claims = new Claim[]
+        {
+            new(CustomClaims.Sub, user.id.ToString()),
+            new(CustomClaims.Email, user.Email),
+            new(CustomClaims.Role, user.Role),
+        };
 
         var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SecretKey));
         var signingCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);

@@ -12,7 +12,7 @@ public class LoginWithRefreshEndpoint : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPost("auth/refresh", async (LoginWithRefreshCommand request, ISender sender) =>
+        app.MapPost("api/auth/refresh", async (LoginWithRefreshCommand request, ISender sender) =>
         {
             var result = await sender.Send(request);
             return result.isSuccess ? Results.Ok(result.Value) : result.ExceptionToResult();

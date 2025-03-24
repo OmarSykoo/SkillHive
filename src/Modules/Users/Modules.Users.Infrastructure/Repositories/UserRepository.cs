@@ -41,7 +41,7 @@ public class UserRepository(UserDbContext userDbContext, IDbConnectionFactory db
         WHERE
         id = @id 
         """;
-        User? user = await sqlConnection.QueryFirstOrDefaultAsync(sqlQuery, new { id });
+        User? user = await sqlConnection.QueryFirstOrDefaultAsync<User>(sqlQuery, new { id });
         return user;
     }
 

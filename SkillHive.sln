@@ -39,6 +39,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.Courses.Infrastruct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.Courses.Presentation", "src\Modules\Courses\Modules.Courses.Presentation\Modules.Courses.Presentation.csproj", "{8A20DB79-91D5-4A56-AE75-45CA478978E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.Courses.IntegrationEvents", "src\Modules\Courses\Modules.Courses.IntegrationEvents\Modules.Courses.IntegrationEvents.csproj", "{8AFAEABD-E308-4F25-8080-96188C7FF378}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.Users.IntegrationEvents", "src\Modules\Users\Modules.Users.IntegrationEvents\Modules.Users.IntegrationEvents.csproj", "{5486FF76-50AC-475E-8D6C-6224F538CCD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +104,14 @@ Global
 		{8A20DB79-91D5-4A56-AE75-45CA478978E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A20DB79-91D5-4A56-AE75-45CA478978E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A20DB79-91D5-4A56-AE75-45CA478978E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AFAEABD-E308-4F25-8080-96188C7FF378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AFAEABD-E308-4F25-8080-96188C7FF378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AFAEABD-E308-4F25-8080-96188C7FF378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AFAEABD-E308-4F25-8080-96188C7FF378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5486FF76-50AC-475E-8D6C-6224F538CCD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5486FF76-50AC-475E-8D6C-6224F538CCD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5486FF76-50AC-475E-8D6C-6224F538CCD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5486FF76-50AC-475E-8D6C-6224F538CCD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BCC6954E-F0EE-48B1-A105-0954F4F4F247} = {15B804ED-84FB-40F7-BC4A-83D6B56A7975}
@@ -119,5 +131,7 @@ Global
 		{6B4EED09-90DA-474B-91F0-FB400EBB3899} = {9EEACA6B-461D-4B50-9B6C-03B969EA192D}
 		{66D076A0-D501-4170-BC62-0CBADFBED2C2} = {9EEACA6B-461D-4B50-9B6C-03B969EA192D}
 		{8A20DB79-91D5-4A56-AE75-45CA478978E7} = {9EEACA6B-461D-4B50-9B6C-03B969EA192D}
+		{8AFAEABD-E308-4F25-8080-96188C7FF378} = {9EEACA6B-461D-4B50-9B6C-03B969EA192D}
+		{5486FF76-50AC-475E-8D6C-6224F538CCD7} = {34DCB362-A91E-497E-B1BC-CB60B4670111}
 	EndGlobalSection
 EndGlobal

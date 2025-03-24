@@ -15,5 +15,6 @@ public class UserDbContext : DbContext, IUnitOfWork
     {
         modelBuilder.ApplyConfiguration<User>(new UserConfig());
         modelBuilder.ApplyConfiguration<RefreshToken>(new RefreshTokenConfig());
+        modelBuilder.ApplyConfiguration<EmailVerificationToken>(new EmailVerificationTokenConfig());
     }
 }

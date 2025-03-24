@@ -12,7 +12,7 @@ public class LoginUserEndpoint : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPost("auth/login", async (LoginUserCommand request, ISender sender) =>
+        app.MapPost("api/auth/login", async (LoginUserCommand request, ISender sender) =>
         {
             var result = await sender.Send(request);
             return result.isSuccess ? Results.Ok(result.Value) : result.ExceptionToResult();
