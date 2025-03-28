@@ -22,6 +22,23 @@ namespace Modules.Users.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Modules.Users.Domain.Entities.EmailVerificationToken", b =>
+                {
+                    b.Property<string>("Token")
+                        .HasMaxLength(36)
+                        .HasColumnType("nvarchar(36)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Token");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("emailVerificationTokens");
+                });
+
             modelBuilder.Entity("Modules.Users.Domain.Entities.RefreshToken", b =>
                 {
                     b.Property<Guid>("Id")
@@ -84,12 +101,26 @@ namespace Modules.Users.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Verified")
+                        .HasColumnType("bit");
+
                     b.HasKey("id");
 
                     b.HasIndex("Email")
                         .IsUnique();
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Modules.Users.Domain.Entities.EmailVerificationToken", b =>
+                {
+                    b.HasOne("Modules.Users.Domain.User", "User")
+                        .WithOne()
+                        .HasForeignKey("Modules.Users.Domain.Entities.EmailVerificationToken", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Modules.Users.Domain.Entities.RefreshToken", b =>

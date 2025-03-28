@@ -210,3 +210,7 @@ C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Grp
 C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Grpc.Net.Client.dll
 C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Grpc.Net.Common.dll
 C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Qdrant.Client.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\FluentEmail.Core.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\FluentEmail.Smtp.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Modules.Users.IntegrationEvents.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Modules.Users.IntegrationEvents.pdb

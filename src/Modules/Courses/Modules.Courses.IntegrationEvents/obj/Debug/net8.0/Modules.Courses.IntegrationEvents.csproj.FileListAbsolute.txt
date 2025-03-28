@@ -1,0 +1,12 @@
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.IntegrationEvents\bin\Debug\net8.0\Modules.Courses.IntegrationEvents.deps.json
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.IntegrationEvents\bin\Debug\net8.0\Modules.Courses.IntegrationEvents.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.IntegrationEvents\bin\Debug\net8.0\Modules.Courses.IntegrationEvents.pdb
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.IntegrationEvents\obj\Debug\net8.0\Modules.Courses.IntegrationEvents.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.IntegrationEvents\obj\Debug\net8.0\Modules.Courses.IntegrationEvents.AssemblyInfoInputs.cache
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.IntegrationEvents\obj\Debug\net8.0\Modules.Courses.IntegrationEvents.AssemblyInfo.cs
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.IntegrationEvents\obj\Debug\net8.0\Modules.Courses.IntegrationEvents.csproj.CoreCompileInputs.cache
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.IntegrationEvents\obj\Debug\net8.0\Modules.Courses.IntegrationEvents.sourcelink.json
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.IntegrationEvents\obj\Debug\net8.0\Modules.Courses.IntegrationEvents.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.IntegrationEvents\obj\Debug\net8.0\refint\Modules.Courses.IntegrationEvents.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.IntegrationEvents\obj\Debug\net8.0\Modules.Courses.IntegrationEvents.pdb
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Courses\Modules.Courses.IntegrationEvents\obj\Debug\net8.0\ref\Modules.Courses.IntegrationEvents.dll

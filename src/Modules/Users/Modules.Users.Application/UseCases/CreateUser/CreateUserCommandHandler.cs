@@ -1,13 +1,20 @@
 using Microsoft.AspNetCore.Identity;
 using Modules.Common.Application.Messaging;
 using Modules.Common.Domain;
+using Modules.Users.Application.Services;
 using Modules.Users.Domain;
+using Modules.Users.Domain.Entities;
 using Modules.Users.Domain.Exceptions;
+using Modules.Users.Domain.Repositories;
 
 
 namespace Modules.Users.Application.UseCases.CreateUser
 {
-    public class CreateUserCommandHandler(IUserRepository userRepository, IUnitOfWork unitOfWork) : ICommandHandler<CreateUserCommand, Guid>
+    public class CreateUserCommandHandler(
+        IUserRepository userRepository,
+        IUnitOfWork unitOfWork,
+        IEmailService emailService,
+        IEmailVerificationTokenRepository emailVerificationTokenRepository) : ICommandHandler<CreateUserCommand, Guid>
     {
         public async Task<Result<Guid>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
@@ -27,7 +34,10 @@ namespace Modules.Users.Application.UseCases.CreateUser
                 request.state,
                 request.city,
                 request.locationDesc);
+            var emailVerificationToken = EmailVerificationToken.Create(user.id);
             await userRepository.CreateUser(user);
+            await emailVerificationTokenRepository.Create(emailVerificationToken);
+            await emailService.SendVerificationToken(user.FirstName, user.Email, emailVerificationToken.Token);
             await unitOfWork.SaveChangesAsync(cancellationToken);
             return user.id;
         }

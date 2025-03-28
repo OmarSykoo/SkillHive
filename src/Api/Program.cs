@@ -3,8 +3,7 @@ using Modules.Common.Presentation.Endpoints;
 using Modules.Common.Infrastructure;
 using SkillHive.Api.Extensions;
 using Modules.Users.Infrastructure;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using SkillHive.Api.Middleware;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -21,22 +20,17 @@ builder.Services.AddInfrastructure([], builder.Configuration);
 builder.Configuration.AddModuleConfiguration("users");
 // adding modules infrastructure
 builder.Services.AddUsersModule(builder.Configuration);
-var app = builder.Build();
 
-app.Use(async (context, next) =>
-{
-    var token = context.Request.Headers["Authorization"].FirstOrDefault();
-    Console.WriteLine($"Received Token: {token}");
-    await next();
-});
+var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapEndpoints();
 app.UseHttpsRedirection();
+app.MapEndpoints();
 app.Run();

@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "xK9Q1Dap9AI=",
+  "dgSpecHash": "wzUOAwIsXdQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\omaro\\OneDrive\\Desktop\\SkillHive\\SkillHive\\src\\Modules\\Users\\Modules.Users.Infrastructure\\Modules.Users.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\omaro\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\omaro\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\omaro\\.nuget\\packages\\dapper\\2.1.28\\dapper.2.1.28.nupkg.sha512",
+    "C:\\Users\\omaro\\.nuget\\packages\\fluentemail.core\\3.0.2\\fluentemail.core.3.0.2.nupkg.sha512",
+    "C:\\Users\\omaro\\.nuget\\packages\\fluentemail.smtp\\3.0.2\\fluentemail.smtp.3.0.2.nupkg.sha512",
     "C:\\Users\\omaro\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\omaro\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "C:\\Users\\omaro\\.nuget\\packages\\google.protobuf\\3.29.3\\google.protobuf.3.29.3.nupkg.sha512",

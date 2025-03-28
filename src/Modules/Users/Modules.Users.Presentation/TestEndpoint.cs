@@ -10,7 +10,7 @@ public class TestEndpoint : IEndpoint
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
         app.MapPost("Test", (string text) => { return Results.Ok(text); })
-        .RequireAuthorization(policy => policy.RequireAuthenticatedUser());
+        .AllowAnonymous();
     }
 
 }

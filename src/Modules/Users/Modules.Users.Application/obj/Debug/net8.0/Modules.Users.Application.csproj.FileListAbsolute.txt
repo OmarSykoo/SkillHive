@@ -18,3 +18,5 @@ C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Users\Modules.Us
 C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Users\Modules.Users.Application\obj\Debug\net8.0\refint\Modules.Users.Application.dll
 C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Users\Modules.Users.Application\obj\Debug\net8.0\Modules.Users.Application.pdb
 C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Users\Modules.Users.Application\obj\Debug\net8.0\ref\Modules.Users.Application.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Users\Modules.Users.Application\bin\Debug\net8.0\Modules.Users.IntegrationEvents.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Modules\Users\Modules.Users.Application\bin\Debug\net8.0\Modules.Users.IntegrationEvents.pdb

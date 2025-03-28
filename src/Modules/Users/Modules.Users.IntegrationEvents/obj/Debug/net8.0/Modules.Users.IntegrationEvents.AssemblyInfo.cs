@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Modules.Users.IntegrationEvents")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c40cdfa41e00241182fef07c6fbcd5ce6ab447f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b054579a070ee5c82533cab492ae091338fe94eb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Modules.Users.IntegrationEvents")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Modules.Users.IntegrationEvents")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

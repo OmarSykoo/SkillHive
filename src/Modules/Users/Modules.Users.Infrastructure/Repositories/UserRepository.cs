@@ -13,7 +13,7 @@ public class UserRepository(UserDbContext userDbContext, IDbConnectionFactory db
         return user.id;
     }
 
-    public async Task<User?> GetUserByEmail(string Email)
+    public async Task<User?> GetUserByEmail(string Email, bool verified)
     {
         var sqlConnection = dbConnectionFactory.CreateSqlConnection();
         string sqlQuery =
@@ -24,12 +24,13 @@ public class UserRepository(UserDbContext userDbContext, IDbConnectionFactory db
         Users
         WHERE
         Email = @Email
+        AND Verified = @verified
         """;
-        User? user = await sqlConnection.QueryFirstOrDefaultAsync<User>(sqlQuery, new { Email });
+        User? user = await sqlConnection.QueryFirstOrDefaultAsync<User>(sqlQuery, new { Email, verified });
         return user;
     }
 
-    public async Task<User?> GetUserById(Guid id)
+    public async Task<User?> GetUserById(Guid id, bool verified)
     {
         var sqlConnection = dbConnectionFactory.CreateSqlConnection();
         string sqlQuery =
@@ -40,8 +41,9 @@ public class UserRepository(UserDbContext userDbContext, IDbConnectionFactory db
         Users
         WHERE
         id = @id 
+        AND Verified = @verified
         """;
-        User? user = await sqlConnection.QueryFirstOrDefaultAsync<User>(sqlQuery, new { id });
+        User? user = await sqlConnection.QueryFirstOrDefaultAsync<User>(sqlQuery, new { id, verified });
         return user;
     }
 
