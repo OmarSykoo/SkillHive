@@ -22,6 +22,19 @@ namespace Modules.Users.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Modules.Common.Infrastructure.Outbox.OutboxConsumerMessage", b =>
+                {
+                    b.Property<Guid>("id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("HandlerName")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("id", "HandlerName");
+
+                    b.ToTable("outboxConsumerMessages");
+                });
+
             modelBuilder.Entity("Modules.Common.Infrastructure.Outbox.OutboxMessage", b =>
                 {
                     b.Property<Guid>("Id")

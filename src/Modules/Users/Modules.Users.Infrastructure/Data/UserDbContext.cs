@@ -14,6 +14,7 @@ public class UserDbContext(DbContextOptions<UserDbContext> Options) :
     public DbSet<RefreshToken> RefreshTokens { get; set; }
     public DbSet<EmailVerificationToken> emailVerificationTokens { get; set; }
     public DbSet<OutboxMessage> outboxMessages { get; set; }
+    public DbSet<OutboxConsumerMessage> outboxConsumerMessages { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration<User>(new UserConfig());
@@ -21,5 +22,6 @@ public class UserDbContext(DbContextOptions<UserDbContext> Options) :
         modelBuilder.ApplyConfiguration<EmailVerificationToken>(new EmailVerificationTokenConfig());
         modelBuilder.ApplyConfiguration<OutboxMessage>(new OutboxMessageConfiguration());
         modelBuilder.ApplyConfiguration<UnverifiedUser>(new UnverifiedUserConfig());
+        modelBuilder.ApplyConfiguration<OutboxConsumerMessage>(new OutboxConsumerMessageConfiguration());
     }
 }

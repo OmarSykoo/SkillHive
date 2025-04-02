@@ -2,9 +2,11 @@ using System.Net;
 using System.Net.Mail;
 using System.Text.Json;
 using MassTransit;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Modules.Common.Infrastructure.interceptors;
 using Modules.Common.Presentation.Endpoints;
 using Modules.Users.Application;
@@ -69,6 +71,7 @@ public static class UsersModule
         {
             return new QdrantClient("localhost", 6334);
         });
+        services.TryAddSingleton<PublishOutboxMessagesInterceptor>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IEmailVerificationTokenRepository, EmailVerificationTokenRepository>();
         services.AddScoped<IRefreshRepository, RefreshTokenRepository>();
@@ -79,5 +82,6 @@ public static class UsersModule
         services.AddScoped<IFaceEmbedingRepository, FaceEmbedingRepository>();
         services.AddScoped<IFaceModelService>(sp => new FaceModelService(FaceNetApi));
         services.AddScoped<IEmailService, EmailService>();
+        services.Decorate(typeof(INotificationHandler<>), typeof(OutboxIdempotentDomainEventHandlerDecorator<>));
     }
 }

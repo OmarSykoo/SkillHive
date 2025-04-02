@@ -3,4 +3,4 @@ using Modules.Common.Domain.DomainEvent;
 
 namespace Modules.Common.Application.Messaging;
 
-public interface IDomainEventHandler<T> : INotificationHandler<T> where T : IDomainEvent; 
+public interface IDomainEventHandler<in T> : INotificationHandler<T> where T : IDomainEvent;

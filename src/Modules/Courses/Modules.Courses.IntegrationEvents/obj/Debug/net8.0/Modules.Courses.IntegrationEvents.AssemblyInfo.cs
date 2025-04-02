@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Modules.Courses.IntegrationEvents")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4868b51df71bd5a25b60fc032686de185f2cc915")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aaa061e87e07839ada736eb2a76361052285116e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Modules.Courses.IntegrationEvents")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Modules.Courses.IntegrationEvents")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

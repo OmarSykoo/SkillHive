@@ -10,10 +10,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
-using Modules.Users.Infrastructure.Interceptors;
 using Quartz;
 using Modules.Common.Infrastructure.Clock;
 using Modules.Common.Application.Clock;
+using Modules.Common.Application.Messaging;
+using MediatR;
 namespace Modules.Common.Infrastructure
 {
     public static class InfrastructureConfiguration
@@ -59,12 +60,8 @@ namespace Modules.Common.Infrastructure
             // Interceptor That Publishes Domain Events
             // services.TryAddSingleton<PublishDomainEventsInterceptors>();
 
-            // Interceptor that Published Outbox Messages with the domain event content
-            services.TryAddSingleton<PublishOutboxMessagesInterceptor>();
-
             // adding DateTime Providers use diffirent datetime provider when unitTesting 
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
-
 
             // Event bus interface for massTransit can be linked to RabbitMq when needed
             services.TryAddSingleton<IEventBus, EventBus>();
