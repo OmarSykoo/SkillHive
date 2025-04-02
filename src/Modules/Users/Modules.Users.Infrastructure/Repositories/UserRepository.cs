@@ -1,3 +1,4 @@
+using System.Data.Common;
 using System.Net.Http.Headers;
 using Dapper;
 using Modules.Users.Application.Abstractions;
@@ -7,15 +8,15 @@ namespace Modules.Users.Infrastructure;
 
 public class UserRepository(UserDbContext userDbContext, IDbConnectionFactory dbConnectionFactory) : IUserRepository
 {
-    public async Task<Guid> CreateUser(User user)
+    public Guid CreateUser(User user)
     {
-        await userDbContext.Users.AddAsync(user);
+        userDbContext.Users.Add(user);
         return user.id;
     }
 
-    public async Task<User?> GetUserByEmail(string Email, bool verified)
+    public async Task<User?> GetUserByEmail(string Email)
     {
-        var sqlConnection = dbConnectionFactory.CreateSqlConnection();
+        await using DbConnection sqlConnection = await dbConnectionFactory.CreateSqlConnection();
         string sqlQuery =
         """
         SELECT
@@ -24,15 +25,14 @@ public class UserRepository(UserDbContext userDbContext, IDbConnectionFactory db
         Users
         WHERE
         Email = @Email
-        AND Verified = @verified
         """;
-        User? user = await sqlConnection.QueryFirstOrDefaultAsync<User>(sqlQuery, new { Email, verified });
+        User? user = await sqlConnection.QueryFirstOrDefaultAsync<User>(sqlQuery, new { Email });
         return user;
     }
 
-    public async Task<User?> GetUserById(Guid id, bool verified)
+    public async Task<User?> GetUserById(Guid id)
     {
-        var sqlConnection = dbConnectionFactory.CreateSqlConnection();
+        await using DbConnection sqlConnection = await dbConnectionFactory.CreateSqlConnection();
         string sqlQuery =
         """
         SELECT
@@ -41,9 +41,8 @@ public class UserRepository(UserDbContext userDbContext, IDbConnectionFactory db
         Users
         WHERE
         id = @id 
-        AND Verified = @verified
         """;
-        User? user = await sqlConnection.QueryFirstOrDefaultAsync<User>(sqlQuery, new { id, verified });
+        User? user = await sqlConnection.QueryFirstOrDefaultAsync<User>(sqlQuery, new { id });
         return user;
     }
 

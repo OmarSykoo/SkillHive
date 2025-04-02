@@ -1,11 +1,12 @@
 
 using System.Data;
+using System.Data.Common;
 
 namespace Modules.Users.Application.Abstractions
 {
     public interface IDbConnectionFactory
     {
-        public IDbConnection CreateSqlConnection();
+        public Task<DbConnection> CreateSqlConnection();
     }
 }
 

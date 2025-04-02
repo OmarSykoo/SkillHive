@@ -214,3 +214,8 @@ C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Flu
 C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\FluentEmail.Smtp.dll
 C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Modules.Users.IntegrationEvents.dll
 C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Modules.Users.IntegrationEvents.pdb
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Quartz.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Quartz.Extensions.DependencyInjection.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Quartz.Extensions.Hosting.dll
+C:\Users\omaro\OneDrive\Desktop\SkillHive\SkillHive\src\Api\bin\Debug\net8.0\Scrutor.dll

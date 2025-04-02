@@ -1,3 +1,4 @@
+using System.Data.Common;
 using Dapper;
 using Modules.Users.Application.Abstractions;
 using Modules.Users.Domain;
@@ -13,7 +14,7 @@ public class RefreshTokenRepository(UserDbContext userDbContext, IDbConnectionFa
     }
     public async Task<RefreshToken?> GetByToken(string Token)
     {
-        var sqlConnection = dbConnectionFactory.CreateSqlConnection();
+        await using DbConnection sqlConnection = await dbConnectionFactory.CreateSqlConnection();
         string sqlQuery =
         """
         SELECT 

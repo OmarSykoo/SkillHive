@@ -1,4 +1,5 @@
 using System.Data;
+using System.Data.Common;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Modules.Users.Application.Abstractions;
@@ -16,7 +17,7 @@ public class EmailVerificationTokenRepository(UserDbContext userDbContext, IDbCo
 
     public async Task<EmailVerificationToken?> GetByToken(string Token)
     {
-        IDbConnection connection = dbConnectionFactory.CreateSqlConnection();
+        await using DbConnection connection = await dbConnectionFactory.CreateSqlConnection();
         string query =
         """
         SELECT
@@ -31,4 +32,18 @@ public class EmailVerificationTokenRepository(UserDbContext userDbContext, IDbCo
         return verificationToken;
     }
 
+    public async Task<EmailVerificationToken?> GetByUserId(Guid id)
+    {
+        await using DbConnection connection = await dbConnectionFactory.CreateSqlConnection();
+        string query =
+        $"""
+        SELECT
+        *
+        FROM
+        EmailVerificationTokens
+        WHERE 
+        {nameof(EmailVerificationToken.UserId)} = @UserId
+        """;
+        return await connection.QueryFirstOrDefaultAsync<EmailVerificationToken>(query, new { UserId = id });
+    }
 }

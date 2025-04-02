@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Modules.Common.Infrastructure.Authentication.RoleRequirment
 {
-    // internal class RoleAuthorizationHandler : AuthorizationHandler<RoleRequirement>
-    // {
-    //     protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, RoleRequirement requirement)
-    //     {
-    //         string role = context.User.GetRole();
-    //         if (requirement.Role == role)
-    //             context.Succeed(requirement);
-    //         return Task.CompletedTask;
-    //     }
-    // }
+    internal class RoleAuthorizationHandler : AuthorizationHandler<RoleRequirement>
+    {
+        protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, RoleRequirement requirement)
+        {
+            string role = context.User.GetRole();
+            if (requirement.Roles.Contains(role))
+                context.Succeed(requirement);
+            return Task.CompletedTask;
+        }
+    }
 }

@@ -15,7 +15,7 @@ public class LoginUserCommandHandler(IUserRepository userRepository, IRefreshRep
 {
     public async Task<Result<LoginUserCommandResponse>> Handle(LoginUserCommand request, CancellationToken cancellationToken)
     {
-        User? user = await userRepository.GetUserByEmail(request.email, true);
+        User? user = await userRepository.GetUserByEmail(request.email);
         if (user == null)
             return new NotFoundException("Email.NotFound", $"User with email {request.email} not found");
         var hasher = new PasswordHasher<Object>();

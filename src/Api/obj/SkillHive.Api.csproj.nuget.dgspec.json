@@ -158,6 +158,10 @@
               "target": "Package",
               "version": "[12.4.1, )"
             },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Serilog": {
               "target": "Package",
               "version": "[4.2.0, )"
@@ -319,9 +323,21 @@
               "target": "Package",
               "version": "[9.0.3, )"
             },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
             "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
               "version": "[9.0.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Quartz.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[3.14.0, )"
             }
           },
           "imports": [

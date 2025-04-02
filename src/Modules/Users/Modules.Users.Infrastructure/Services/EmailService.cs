@@ -28,8 +28,8 @@ public class EmailService(IConfiguration configuration, IOptions<GmailSmtpOption
 
     public async Task SendVerificationToken(string FirstName, string Email, string Token)
     {
-        string bodyTemplate = configuration.GetValue<string>("EmailTemplates:VerificationMail:body")!;
-        string subject = configuration.GetValue<string>("EmailTemplates:VerificationMail:subject")!;
+        string bodyTemplate = configuration.GetValue<string>("Users:EmailTemplates:VerificationMail:body")!;
+        string subject = configuration.GetValue<string>("Users:EmailTemplates:VerificationMail:subject")!;
         await sendMail(
             Email,
             subject,

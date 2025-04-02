@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Modules.Common.Infrastructure.Authentication.RoleRequirment
 {
-    // public class RoleRequirement : IAuthorizationRequirement
-    // {
-    //     public string Role { get; init; }
-    //     public RoleRequirement(string Role)
-    //     {
-    //         this.Role = Role;
-    //     }
-    // }
+    public class RoleRequirement : IAuthorizationRequirement
+    {
+        public string[] Roles { get; init; }
+        public RoleRequirement(string Roles)
+        {
+            this.Roles = Roles.Split(",");
+        }
+    }
 }

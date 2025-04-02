@@ -8,15 +8,15 @@ namespace Modules.Common.Application.Extensions
 {
     public static class ResultExtension
     {
-        public static IResult ExceptionToResult( this Result result )
+        public static IResult ExceptionToResult(this Result result)
         {
-            Exception ex = result.exception!; 
+            Exception ex = result.exception!;
             return ex switch
             {
                 NotFoundException nf => Results.Problem(
-                    title : nf.Code ,
-                    detail : nf.Message,
-                    statusCode : StatusCodes.Status404NotFound 
+                    title: nf.Code,
+                    detail: nf.Message,
+                    statusCode: StatusCodes.Status404NotFound
                 ),
                 BadRequestException br => Results.Problem(
                     title: "Bad Request",
@@ -36,10 +36,15 @@ namespace Modules.Common.Application.Extensions
                     detail: na.Message,
                     statusCode: StatusCodes.Status401Unauthorized
                 ),
+                ExpiredException ee => Results.Problem(
+                    title: ee.Code,
+                    detail: ee.Message,
+                    statusCode: StatusCodes.Status403Forbidden
+                ),
                 _ => Results.Problem(
-                    title : "Internal Server Error",
-                    detail : "An unexpected error occurred.",
-                    statusCode : StatusCodes.Status500InternalServerError
+                    title: "Internal Server Error",
+                    detail: "An unexpected error occurred.",
+                    statusCode: StatusCodes.Status500InternalServerError
                 )
             };
         }

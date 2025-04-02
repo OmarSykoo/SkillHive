@@ -22,11 +22,45 @@ namespace Modules.Users.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Modules.Common.Infrastructure.Outbox.OutboxMessage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Error")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OccurredOnUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ProcessedOnUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("outbox_messages", (string)null);
+                });
+
             modelBuilder.Entity("Modules.Users.Domain.Entities.EmailVerificationToken", b =>
                 {
                     b.Property<string>("Token")
                         .HasMaxLength(36)
                         .HasColumnType("nvarchar(36)");
+
+                    b.Property<DateTime>("CreatedOnUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ExpiresOnUtc")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -63,6 +97,49 @@ namespace Modules.Users.Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("RefreshTokens");
+                });
+
+            modelBuilder.Entity("Modules.Users.Domain.Entities.UnverifiedUser", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("Balance")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("DateOfCreation")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HashedPassword")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("Email");
+
+                    b.ToTable("unverifiedUsers");
                 });
 
             modelBuilder.Entity("Modules.Users.Domain.User", b =>
@@ -114,7 +191,7 @@ namespace Modules.Users.Infrastructure.Migrations
 
             modelBuilder.Entity("Modules.Users.Domain.Entities.EmailVerificationToken", b =>
                 {
-                    b.HasOne("Modules.Users.Domain.User", "User")
+                    b.HasOne("Modules.Users.Domain.Entities.UnverifiedUser", "User")
                         .WithOne()
                         .HasForeignKey("Modules.Users.Domain.Entities.EmailVerificationToken", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -132,6 +209,37 @@ namespace Modules.Users.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Modules.Users.Domain.Entities.UnverifiedUser", b =>
+                {
+                    b.OwnsOne("Modules.Users.Domain.Location", "location", b1 =>
+                        {
+                            b1.Property<Guid>("UnverifiedUserid")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<string>("city")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<string>("description")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<string>("state")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.HasKey("UnverifiedUserid");
+
+                            b1.ToTable("unverifiedUsers");
+
+                            b1.WithOwner()
+                                .HasForeignKey("UnverifiedUserid");
+                        });
+
+                    b.Navigation("location")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Modules.Users.Domain.User", b =>

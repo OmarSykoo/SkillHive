@@ -1,5 +1,6 @@
 using FluentValidation;
 using MassTransit.SagaStateMachine;
+using Modules.Common.Application.Clock;
 using Modules.Common.Application.Messaging;
 using Modules.Common.Domain;
 using Modules.Common.Domain.Exceptions;
@@ -15,18 +16,32 @@ public record VerifyEmailCommand(string VerifyToken) : ICommand;
 public sealed class VerifyEmailCommandHandler(
     IEmailVerificationTokenRepository emailVerificationTokenRepository,
     IUserRepository userRepository,
-    IUnitOfWork unitOfWork) : ICommandHandler<VerifyEmailCommand>
+    IUnverifiedUserRepository unverifiedUserRepository,
+    IUnitOfWork unitOfWork,
+    IDateTimeProvider dateTimeProvider) : ICommandHandler<VerifyEmailCommand>
 {
     public async Task<Result> Handle(VerifyEmailCommand request, CancellationToken cancellationToken)
     {
         EmailVerificationToken? emailVerificationToken = await emailVerificationTokenRepository.GetByToken(request.VerifyToken);
         if (emailVerificationToken is null)
             return new TokenNotFound(request.VerifyToken);
-        User? user = await userRepository.GetUserById(emailVerificationToken.UserId);
-        if (user is null)
+        if (emailVerificationToken.ExpiresOnUtc < dateTimeProvider.UtcNow)
+            return new TokenExpired(request.VerifyToken);
+        UnverifiedUser? unverifiedUser = await unverifiedUserRepository.GetById(emailVerificationToken.UserId);
+        if (unverifiedUser is null)
             return new UserNotFound(emailVerificationToken.UserId);
-        user.Verify();
-        await userRepository.UpdateUser(user);
+        var user = User.Create(
+            unverifiedUser.FirstName,
+            unverifiedUser.LastName,
+            unverifiedUser.HashedPassword,
+            unverifiedUser.Role,
+            unverifiedUser.Email,
+            unverifiedUser.PhoneNumber,
+            unverifiedUser.location.state,
+            unverifiedUser.location.city,
+            unverifiedUser.location.description
+        );
+        userRepository.CreateUser(user);
         await unitOfWork.SaveChangesAsync();
         return Result.Success();
     }

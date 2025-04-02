@@ -10,6 +10,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using Modules.Users.Infrastructure.Interceptors;
+using Quartz;
+using Modules.Common.Infrastructure.Clock;
+using Modules.Common.Application.Clock;
 namespace Modules.Common.Infrastructure
 {
     public static class InfrastructureConfiguration
@@ -53,7 +57,14 @@ namespace Modules.Common.Infrastructure
             #endregion 
 
             // Interceptor That Publishes Domain Events
-            services.TryAddSingleton<PublishDomainEventsInterceptors>();
+            // services.TryAddSingleton<PublishDomainEventsInterceptors>();
+
+            // Interceptor that Published Outbox Messages with the domain event content
+            services.TryAddSingleton<PublishOutboxMessagesInterceptor>();
+
+            // adding DateTime Providers use diffirent datetime provider when unitTesting 
+            services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+
 
             // Event bus interface for massTransit can be linked to RabbitMq when needed
             services.TryAddSingleton<IEventBus, EventBus>();
@@ -67,6 +78,10 @@ namespace Modules.Common.Infrastructure
                     cfg.ConfigureEndpoints(context);
                 });
             });
+
+            // adding quartz for background jobs 
+            services.AddQuartz();
+            services.AddQuartzHostedService(options => options.WaitForJobsToComplete = true);
         }
     }
 }
